@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}{{form.name}}{% endblock title %}
+
+{% block header %}{{form.name}}{% endblock header %}
+
+
+{% block breadcrumbs %}
+<li class="breadcrumb-item">{{form.name}}</li>
+<li class="breadcrumb-item active">Create</li>
+{% endblock breadcrumbs %}
+
+
+{% block body %}
+<div class="col-lg-2"></div>
+<div class="col-lg-8">
+    <div class="card card-outline card-info shadow-lg">
+        
+        <form enctype="multipart/form-data" method='POST'>
+            
+            
+            <div class="card-body">
+                {% csrf_token %}
+                {{form.as_p}}
+            </div>
+
+
+            <div class="card-footer">
+                <a href=" url 'home:home' %}">
+                    <button type="button" class="btn btn-default">Dashbboard</button>
+                </a>
+                <button type="submit" class="btn btn-info float-right">Confirm</button>
+            </div>
+        </form>
+    
+    </div>
+</div>
+{% endblock body %}

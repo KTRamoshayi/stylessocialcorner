@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Stand Categories{% endblock title %}
+
+{% block header %}Stand Categories{% endblock header %}
+    
+
+{% block breadcrumbs %}
+    <li class="breadcrumb-item">Inventory</li>
+    <li class="breadcrumb-item active">Categories</li>
+{% endblock breadcrumbs %}
+
+
+{% block body %}
+<div class="col-lg-2"></div>
+<div class="col-lg-8">
+
+    <div class="card card-outline card-info shadow-lg">
+
+        <div class="card-header">
+            <span class="card-tools">
+                <a class="text-success" href="{% url 'inventory:create-stand-category' %}">
+                    <i class="fas fa-plus"></i>
+                    Create
+                </a>
+            </span>
+        </div>
+
+        <div class="card-body">
+            {% include 'list.html' %}
+        </div>
+    </div>
+    
+</div>
+
+{% endblock body %}

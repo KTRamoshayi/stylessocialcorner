@@ -1,0 +1,40 @@
+
+
+<table class="table table-hover">
+    <tbody>
+
+        {% for object in object_list %}
+
+            <tr data-widget="expandable-table" aria-expanded="false">
+                <td>
+                    {{object.title}}
+                </td>
+                <td width="100px" class="text-center">
+                    <a class="text-info" href="{{object.return_url}}"><i class="fa fa-file-alt"></i></a>
+                    {% if object.manager == request.user %}
+                        <i class="fas"></i>
+                        <a class="text-warning" href="{{object.update_url}}"><i class="fas fa-edit"></i></a>
+                        <i class="fas"></i>
+                        <a class="text-danger" href="{{object.delete_url}}"><i class="fas fa-trash"></i></a>
+                    {% endif %}
+                </td>
+            </tr>
+
+            <tr class="expandable-body d-none">
+                <td colspan="2">
+                    <div class="p-0" style="display: none;">
+                        <table class="table table-hover">
+                            {% if object.description %}
+                                <p>{{object.description|linebreaks}}</p>
+                            {% else %}
+                                <p>Nothing here...</p>
+                            {% endif %}
+                        </table>
+                    </div>
+                </td>
+            </tr>
+
+        {% endfor %}
+
+    </tbody>
+</table>

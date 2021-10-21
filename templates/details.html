@@ -1,0 +1,30 @@
+
+<div class="col-lg-2"></div>
+<div class="col-lg-8">
+
+    <div class="card card-outline card-info shadow-lg">
+
+        <div class="card-body">
+            <table class="table table-hover">
+                <tbody>
+
+                    {% for label, value in object.items|slice:"1:2" %}
+
+                        <tr>
+                            <td class="text-bold">
+                                {{label|capfirst}}
+                            </td>
+                            <td>
+                                {{value|linebreaks}}
+                            </td>
+                        </tr>
+
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+</div>
+

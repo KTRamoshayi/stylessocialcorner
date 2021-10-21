@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Stand Category: {{object.title}}{% endblock title %}
+
+{% block header %}{{object.title}}{% endblock header %}
+    
+
+{% block breadcrumbs %}
+    <li class="breadcrumb-item">Inventory</li>
+    <li class="breadcrumb-item">Categories</li>
+    <li class="breadcrumb-item active">{{object.title}}</li>
+{% endblock breadcrumbs %}
+
+
+{% block body %}
+
+{% include 'details.html' %}
+
+{% endblock body %}
